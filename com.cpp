@@ -24,7 +24,7 @@ void advnst(long k)
 #define numg 32L
 extern void gsrgs(long getset,long *qvalue);
 extern void gscgn(long getset,long *g);
-extern long Xm1,Xm2,Xa1,Xa2,Xcg1[],Xcg2[];
+// extern long Xm1,Xm2,Xa1,Xa2,Xcg1[],Xcg2[];
 long g,i,ib1,ib2;
 long qrgnin;
 /*
@@ -69,7 +69,7 @@ void getsd(long *iseed1,long *iseed2)
 #define numg 32L
 extern void gsrgs(long getset,long *qvalue);
 extern void gscgn(long getset,long *g);
-extern long Xcg1[],Xcg2[];
+// extern long Xcg1[],Xcg2[];
 long g;
 long qrgnin;
 /*
@@ -106,8 +106,8 @@ extern void gsrgs(long getset,long *qvalue);
 extern void gssst(long getset,long *qset);
 extern void gscgn(long getset,long *g);
 extern void inrgcm(void);
-extern long Xm1,Xm2,Xa1,Xa2,Xcg1[],Xcg2[];
-extern long Xqanti[];
+// extern long Xm1,Xm2,Xa1,Xa2,Xcg1[],Xcg2[];
+// extern long Xqanti[];
 long ignlgi,curntg,k,s1,s2,z;
 long qqssd,qrgnin;
 /*
@@ -164,7 +164,7 @@ void initgn(long isdtyp)
 #define numg 32L
 extern void gsrgs(long getset,long *qvalue);
 extern void gscgn(long getset,long *g);
-extern long Xm1,Xm2,Xa1w,Xa2w,Xig1[],Xig2[],Xlg1[],Xlg2[],Xcg1[],Xcg2[];
+// extern long Xm1,Xm2,Xa1w,Xa2w,Xig1[],Xig2[],Xlg1[],Xlg2[],Xcg1[],Xcg2[];
 long g;
 long qrgnin;
 /*
@@ -214,8 +214,8 @@ void inrgcm(void)
 {
 #define numg 32L
 extern void gsrgs(long getset,long *qvalue);
-extern long Xm1,Xm2,Xa1,Xa2,Xa1w,Xa2w,Xa1vw,Xa2vw;
-extern long Xqanti[];
+// extern long Xm1,Xm2,Xa1,Xa2,Xa1w,Xa2w,Xa1vw,Xa2vw;
+// extern long Xqanti[];
 long T1;
 long i;
 /*
@@ -265,7 +265,7 @@ void setall(long iseed1,long iseed2)
 extern void gsrgs(long getset,long *qvalue);
 extern void gssst(long getset,long *qset);
 extern void gscgn(long getset,long *g);
-extern long Xm1,Xm2,Xa1vw,Xa2vw,Xig1[],Xig2[];
+// extern long Xm1,Xm2,Xa1vw,Xa2vw,Xig1[],Xig2[];
 long T1;
 long g,ocgn;
 long qrgnin;
@@ -318,7 +318,7 @@ void setant(long qvalue)
 #define numg 32L
 extern void gsrgs(long getset,long *qvalue);
 extern void gscgn(long getset,long *g);
-extern long Xqanti[];
+// extern long Xqanti[];
 long g;
 long qrgnin;
 /*
@@ -355,7 +355,7 @@ void setsd(long iseed1,long iseed2)
 #define numg 32L
 extern void gsrgs(long getset,long *qvalue);
 extern void gscgn(long getset,long *g);
-extern long Xig1[],Xig2[];
+// extern long Xig1[],Xig2[];
 long g;
 long qrgnin;
 /*

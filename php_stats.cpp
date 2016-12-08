@@ -161,27 +161,17 @@ PHP_MINFO_FUNCTION(stats)
  */
 static int stats_array_data_compare(const void *a, const void *b TSRMLS_DC)
 {
-	Bucket *f;
-	Bucket *s;
-	int result;
-	zval first;
-	zval second;
+	Bucket *f, *s;
+	zval *first, *second;
+	zval result;
 
-	f = (Bucket *) a;
-	s = (Bucket *) b;
+	f = *(Bucket **) a;
+	s = *(Bucket **) b;
 
-	first = f->val;
-	second = s->val;
+	first = *(zval **)f->pData;
+	second = *(zval **)s->pData;
 
-	result = numeric_compare_function(&first, &second TSRMLS_CC);
-
-	if (result < 0) {
-		return -1;
-	} else if (result > 0) {
-		return 1;
-	}
-
-	return 0;
+	return numeric_compare_function(&result, first, second TSRMLS_CC);
 }
 
 
