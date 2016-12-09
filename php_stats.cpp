@@ -36,6 +36,7 @@
 
 #define STATS_PI 3.14159265358979323846
 
+typedef long zend_long; // XXXhhvm
 
 #ifdef PHP_WIN32
 extern double fd_lgamma(double x);
@@ -2471,7 +2472,7 @@ PHP_FUNCTION(stats_rand_phrase_to_seeds)
 	if (zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "z", &par1) == FAILURE) {
 		RETURN_FALSE;
 	}
-	convert_to_string_ex(par1);
+	convert_to_string_ex(&par1);
 
 	arg1 = estrndup(Z_STRVAL_P(par1), Z_STRLEN_P(par1));
 	phrtsd(arg1, &seed_1, &seed_2);
@@ -2577,7 +2578,7 @@ PHP_FUNCTION(stats_rand_gen_t)
 		RETURN_FALSE;
 	}
 
-	convert_to_double_ex(arg1);
+	convert_to_double_ex(&arg1);
 	df = Z_DVAL_P(arg1);
 
 	if (df <= 0.0) {
@@ -3041,8 +3042,8 @@ PHP_FUNCTION(stats_stat_powersum)
 		RETURN_FALSE;
 	}
 
-	convert_to_array_ex(arg1);
-	convert_to_double_ex(arg2);
+	convert_to_array_ex(&arg1);
+	convert_to_double_ex(&arg2);
 	power = Z_DVAL_P(arg2);
 
 	zend_hash_internal_pointer_reset_ex(Z_ARRVAL_P(arg1), &pos);
